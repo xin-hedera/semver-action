@@ -15,4 +15,9 @@ export interface ISettings {
    * Bump - the type of version increment (e.g. patch, minor, major, prerelease, etc.)
    */
   bump: string
+
+  /**
+   * Prelease ID - the prelease id to use with bump
+   */
+  prereleaseId: string
 }

@@ -13,7 +13,7 @@ async function run(): Promise<void> {
       )}`
     )
     const outputs = new Outputs()
-    await outputs.setVersions(settings.version, settings.bump as ReleaseType)
+    await outputs.setVersions(settings.version, settings.bump as ReleaseType, settings.prereleaseId)
     core.startGroup('Semantic Versions')
     core.info(`Version: ${outputs.version}`)
     core.info(`Version MAJOR: ${outputs.version.major}`)

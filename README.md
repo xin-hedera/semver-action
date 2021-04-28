@@ -31,6 +31,9 @@ Set the various versions based on the initial version string, and based on the f
     # The type of version increment (e.g. patch, minor, major, prerelease, etc.). This
     # action is READ-ONLY for the filesystem.
     bump: ''
+
+    # The prerelease identifier used for versiono icrement.
+    prerelease-id: ''
 ```
 ```yaml
 outputs:
@@ -48,6 +51,9 @@ outputs:
 
   # The current PATCH version.
   patch: ''
+
+  # The current PRERELEASE ID.
+  prerelease: ''
 
   # The version used to next.
   next-version: ''

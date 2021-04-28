@@ -96,7 +96,7 @@ describe('semver-action tests', () => {
       expect(settings.version).toEqual('v1.0.0')
 
       const outputs = new Outputs()
-      await outputs.setVersions(settings.version, settings.bump as ReleaseType)
+      await outputs.setVersions(settings.version, settings.bump as ReleaseType, settings.prereleaseId)
       expect(outputs.version).toBeTruthy()
       expect(outputs.version).toEqual(new SemVer('v1.0.0'))
     })
@@ -119,7 +119,7 @@ describe('semver-action tests', () => {
       expect(settings.version).toEqual('1.0.0')
 
       const outputs = new Outputs()
-      await outputs.setVersions(settings.version, settings.bump as ReleaseType)
+      await outputs.setVersions(settings.version, settings.bump as ReleaseType, settings.prereleaseId)
       expect(outputs.version).toBeTruthy()
       expect(outputs.version).toEqual(new SemVer('1.0.0'))
     })
@@ -141,7 +141,7 @@ describe('semver-action tests', () => {
       expect(settings.version).toEqual('1.0.0')
 
       const outputs = new Outputs()
-      await outputs.setVersions(settings.version, settings.bump as ReleaseType)
+      await outputs.setVersions(settings.version, settings.bump as ReleaseType, settings.prereleaseId)
       expect(outputs.version).toBeTruthy()
       expect(outputs.version).toEqual(new SemVer('1.0.0'))
       expect(outputs?.nextVersion).toEqual(new SemVer('1.0.1'))
@@ -167,7 +167,7 @@ describe('semver-action tests', () => {
       expect(settings.version).toEqual('1.0.0')
 
       const outputs = new Outputs()
-      await outputs.setVersions(settings.version, settings.bump as ReleaseType)
+      await outputs.setVersions(settings.version, settings.bump as ReleaseType, settings.prereleaseId)
       expect(outputs.version).toBeTruthy()
       expect(outputs.version).toEqual(new SemVer('1.0.0'))
       expect(outputs?.nextVersion).toEqual(new SemVer('1.1.0'))
@@ -196,7 +196,7 @@ describe('semver-action tests', () => {
       expect(settings.version).toEqual('1.0.0-SNAPSHOT')
 
       const outputs = new Outputs()
-      await outputs.setVersions(settings.version, settings.bump as ReleaseType)
+      await outputs.setVersions(settings.version, settings.bump as ReleaseType, settings.prereleaseId)
       expect(outputs.version).toBeTruthy()
       expect(outputs.version).toEqual(new SemVer('1.0.0-SNAPSHOT'))
       expect(outputs?.version?.prerelease.length > 0).toBeTruthy()
@@ -221,7 +221,7 @@ describe('semver-action tests', () => {
       expect(settings.version).toEqual('1.0.0-SNAPSHOT')
 
       const outputs = new Outputs()
-      await outputs.setVersions(settings.version, settings.bump as ReleaseType)
+      await outputs.setVersions(settings.version, settings.bump as ReleaseType, settings.prereleaseId)
       expect(outputs.version).toBeTruthy()
       expect(outputs.version).toEqual(new SemVer('1.0.0-SNAPSHOT'))
       expect(outputs.snapshotRelease).toBeTruthy()
@@ -254,7 +254,7 @@ describe('semver-action tests', () => {
       expect(settings.version).toEqual('1.0.0-SNAPSHOT')
 
       const outputs = new Outputs()
-      await outputs.setVersions(settings.version, settings.bump as ReleaseType)
+      await outputs.setVersions(settings.version, settings.bump as ReleaseType, settings.prereleaseId)
       expect(outputs.version).toBeTruthy()
       expect(outputs.version).toEqual(new SemVer('1.0.0-SNAPSHOT'))
       expect(outputs.snapshotRelease).toBeTruthy()
