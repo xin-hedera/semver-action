@@ -48,11 +48,11 @@ export class Outputs implements IOutputs {
    * @param version - the version string
    * @param bump - version bump
    */
-  async setVersions(version: string, bump: string): Promise<void> {
+  async setVersions(version: string, bump: string, prereleaseId: string): Promise<void> {
     this.snapshotRelease = version.endsWith('-SNAPSHOT')
     this.version = new SemVer(version)
     if (bump) {
-      this.nextVersion = new SemVer(`${this.version}`).inc(bump as ReleaseType)
+      this.nextVersion = new SemVer(`${this.version}`).inc(bump as ReleaseType, prereleaseId)
       if (this.snapshotRelease) {
         const nextSnapshotVersion = new SemVer(`${this.nextVersion}`).inc(
           bump as ReleaseType

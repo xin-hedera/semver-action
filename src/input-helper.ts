@@ -30,6 +30,7 @@ export async function getInputs(): Promise<ISettings> {
     }
   }
   result.bump = core.getInput('bump')
+  result.prereleaseId = core.getInput('prerelease-id')
   return result
 }
 

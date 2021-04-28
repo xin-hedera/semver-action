@@ -7,6 +7,7 @@ export async function setOutputs(outputs: IOutputs): Promise<void> {
   core.setOutput('major', String(outputs.version?.major))
   core.setOutput('minor', String(outputs.version?.minor))
   core.setOutput('patch', String(outputs.version?.patch))
+  core.setOutput('prerelease', String(outputs.version?.prerelease))
   core.setOutput('next-version', String(outputs.nextVersion))
   core.setOutput('next-major', String(outputs.nextVersion?.major))
   core.setOutput('next-minor', String(outputs.nextVersion?.minor))

@@ -15,6 +15,10 @@ inputs:
       The type of version increment (e.g. patch, minor, major, prerelease, etc.). This action is READ-ONLY for the
       filesystem.
     required: false
+  prerelease-id:
+    description: >
+      The prerelease identifier used for versiono icrement.
+    required: false
 outputs:
   snapshot-release:
     description: Whether the version is a SNAPSHOT
@@ -26,6 +30,8 @@ outputs:
     description: The current MINOR version.
   patch:
     description: The current PATCH version.
+  prerelease:
+    description: The current PRERELEASE ID.
   next-version:
     description: The version used to next.
   next-major:
